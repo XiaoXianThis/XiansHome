@@ -25,19 +25,96 @@
         width: 100%;
         height: 100%;
         background: url("资源/Imgs/bg.jpg");
-        filter: blur(10px);
         transform: scale(1.042);
+        background-size:100% 100%; 
+        background-attachment: fixed;" 
     }
     .fugai{
         position: absolute;
-        background-color: aliceblue;
         width: 800px;
-        height: 800px;
+        height: 600px;
         left:0;
         right:0;
         top:0; 
         bottom:0;
         margin:auto;
+    }
+    
+    .search-input-out {
+        position: absolute;
+        left:0;
+        right:0;
+        top:0; 
+        bottom:0;
+        margin:auto;
+        width: 400px;
+        border-radius: 28px;
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+        border-bottom-right-radius: 28px;
+        border-bottom-left-radius: 28px;
+    }
+    .search-btn-input {
+        display: flex;
+    }
+    .se-select {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 70px;
+        height: 62px;
+        cursor: pointer;
+        transition: background ease .2s;
+        border-radius: 50% 0 0 50%;
+    }
+    .se-select-img {
+        width: 60px;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60%;
+    }
+    .se-select-triangle {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        width: 0;
+        margin-top: -3px;
+        border-top: solid 8px rgba(0,0,0,.1);
+        border-right: solid 5px transparent;
+        border-left: solid 5px transparent;
+    }
+    .search-input {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 50px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 62px;
+        padding-right: 20px;
+        padding-left: 80px;
+        color: #555;
+        border: none;
+        border-top-left-radius: 40px;
+        border-bottom-left-radius: 40px;
+        outline: 0;
+        background-color: #fff;
+        box-shadow: 2px 2px 20px rgba(0,0,0,.06);
+    }
+    .se-button {
+        display: none;
+        width: 90px;
+        cursor: pointer;
+        transition: opacity ease .3s;
+        border-radius: 0 40px 40px 0;
+        background-color: #ff5052;
+        background-image: url(/icon/search.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 26px;
+    }
+    .se-btn-show-true .se-button {
+        display: block;
     }
 </style>
 </head>
@@ -46,8 +123,52 @@
         <div class="blurbg">
         </div>
         <div class="fugai">
-        
+            <div class="search-input-out">
+                <div class="search-btn-input se-btn-show-true se-btn-show-true">
+                <div class="se-select">
+                    <div id="se-select-img" class="se-select-img" style="background-image: url(&quot;https://basic-static-server.infinitynewtab.com/search-logos/baidu.png?imageView2/0/format/webp/q/48/v/1&quot;);"></div>
+                    <div class="se-select-triangle"></div>
+                </div>
+                <input type="search" id="search-input" autocomplete="off" autofocus="autofocus" placeholder="百度一下" class="search-input">
+                <div class="se-button"></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
