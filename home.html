@@ -31,7 +31,7 @@
     }
     .fugai{
         position: absolute;
-        width: 800px;
+        width: 100%;
         height: 600px;
         left:0;
         right:0;
@@ -47,7 +47,7 @@
         top:0; 
         bottom:0;
         margin:auto;
-        width: 400px;
+        width: 40%;
         border-radius: 28px;
         border-top-left-radius: 28px;
         border-top-right-radius: 28px;
@@ -61,29 +61,21 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 70px;
+        width: 90px;
         height: 62px;
         cursor: pointer;
         transition: background ease .2s;
         border-radius: 50% 0 0 50%;
+        padding-left: 10px;
     }
     .se-select-img {
-        width: 60px;
+        width:70%;
         height: 100%;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 60%;
     }
-    .se-select-triangle {
-        position: absolute;
-        top: 50%;
-        right: 5px;
-        width: 0;
-        margin-top: -3px;
-        border-top: solid 8px rgba(0,0,0,.1);
-        border-right: solid 5px transparent;
-        border-left: solid 5px transparent;
-    }
+    
     .search-input {
         font-size: 20px;
         font-weight: 300;
@@ -92,7 +84,7 @@
         width: 100%;
         height: 62px;
         padding-right: 20px;
-        padding-left: 80px;
+        padding-left: 75px;
         color: #555;
         border: none;
         border-top-left-radius: 40px;
@@ -123,11 +115,10 @@
         <div class="blurbg">
         </div>
         <div class="fugai">
-            <div class="search-input-out">
+            <div class="search-input-out" id="search-out">
                 <div class="search-btn-input se-btn-show-true se-btn-show-true">
                 <div class="se-select">
                     <div id="se-select-img" class="se-select-img" style="background-image: url(&quot;https://basic-static-server.infinitynewtab.com/search-logos/baidu.png?imageView2/0/format/webp/q/48/v/1&quot;);"></div>
-                    <div class="se-select-triangle"></div>
                 </div>
                 <input type="search" id="search-input" autocomplete="off" autofocus="autofocus" placeholder="百度一下" class="search-input">
                 <div class="se-button"></div>
@@ -136,6 +127,36 @@
         </div>
     </div>
 </body>
+    
+    
+    
+    
+<script type="text/javascript">
+    var system ={};  
+       var p = navigator.platform;       
+       system.win = p.indexOf("Win") == 0;  
+       system.mac = p.indexOf("Mac") == 0;  
+       system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);     
+       if(system.win||system.mac||system.xll){
+           //pc访问, 输入框为35%
+           document.getElementById("search-out").style.width="35%";
+       }else{
+           //手机访问, 输入框为35%
+           document.getElementById("search-out").style.width="70%";
+       }
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </html>
 
 
