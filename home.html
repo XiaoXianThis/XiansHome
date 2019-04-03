@@ -109,6 +109,7 @@
         display: block;
     }
 </style>
+    <title>小仙的上网主页</title>
 </head>
 <body>
     <div class="mainDiv">
@@ -120,8 +121,10 @@
                 <div class="se-select">
                     <div id="se-select-img" class="se-select-img" style="background-image: url(&quot;https://basic-static-server.infinitynewtab.com/search-logos/baidu.png?imageView2/0/format/webp/q/48/v/1&quot;);"></div>
                 </div>
-                <input type="search" id="search-input" autocomplete="off" autofocus="autofocus" placeholder="百度一下" class="search-input">
-                <div class="se-button"></div>
+                <input type="search" id="search-input" onkeypress="CheckInfo()" autocomplete="off" autofocus="autofocus" placeholder="百度一下" class="search-input">
+                <div class="se-button" id="btn-search" onclick="searchClick()">
+                    
+                </div>
                 </div>
             </div>
         </div>
@@ -132,31 +135,31 @@
     
     
 <script type="text/javascript">
+    
+    //搜索按钮点击
+    function searchClick(){
+        window.location.href="https://www.baidu.com/s?wd="+document.getElementById("search-input").value;  
+    }
+    //搜索框回车
+    function CheckInfo() {
+        if (event.keyCode == 13) {
+            window.location.href="https://www.baidu.com/s?wd="+document.getElementById("search-input").value;
+        }  
+    } 
+    
     var system ={};  
        var p = navigator.platform;       
        system.win = p.indexOf("Win") == 0;  
        system.mac = p.indexOf("Mac") == 0;  
        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);     
        if(system.win||system.mac||system.xll){
-           //pc访问, 输入框为35%
+           //pc访问输入框为35
            document.getElementById("search-out").style.width="35%";
-       }else{
-           //手机访问, 输入框为35%
-           document.getElementById("search-out").style.width="70%";
+       }else{ 
+           //如果是手机,跳转到
+            window.location.href="https://www.baidu.com";  
        }
-</script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+</script> 
 </html>
 
 
