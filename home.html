@@ -130,6 +130,48 @@
         position: absolute;
     }
     
+    .popdiv{
+        position: absolute;
+        width: 500px;
+        height: 600px;
+        left: -170px;
+        
+        transform: scale(0.4);
+        transition: 0.3s;
+        bottom: -325px;
+        opacity: 1;
+    }
+    .popdiv:hover{
+        transform: scale(0.5);
+        bottom: -250px;
+        left: -150px;
+        transition: 0.3s;
+    }
+    .popdiv:hover .popmsg{
+        opacity: 1;
+        left: 200px;
+        transition: 0.5s;
+    }
+    .popmsg{
+        opacity: 0;
+        width: 100%; 
+        position: absolute; 
+        left: 0;
+        top: 100;
+        height: 100%;
+        transition: 0.3s;
+    }
+    
+    .popimg{
+        width: 500px;
+        height: 600px;
+        position: absolute;
+        border-style:none;
+        border-width:0;
+        border:none;
+        background-image: url(资源/Imgs/up.png);
+    }
+    
 </style>
     <title>小仙的上网主页</title>
 </head>
@@ -152,6 +194,12 @@
                 </div>
             </div>
         </div>
+        <div id="popdiv" class="popdiv">
+            <div class="popmsg">
+                <p style="color: white; opacity: 0.7; font-size: 38px;">大不6仙</p>
+            </div>
+            <div onclick="xiaoxianClick()" class="popimg" id="xiaoxian" />
+        </div>
     </div>
 </body>
     
@@ -163,6 +211,9 @@
     //搜索按钮点击
     function searchClick(){
         window.location.href="https://www.baidu.com/s?wd="+document.getElementById("search-input").value;  
+    }
+    function xiaoxianClick(){
+        window.location.href="https://space.bilibili.com/12724008";
     }
     //搜索框回车
     function CheckInfo() {
