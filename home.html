@@ -45,10 +45,10 @@
     .fugai{
         position: absolute;
         width: 100%;
-        height: 600px;
+        height: 100%;
         left:0;
         right:0;
-        top:0; 
+        top:50%; 
         bottom:0;
         margin:auto;
     }
@@ -59,13 +59,8 @@
         right:0;
         top:0; 
         bottom:0;
-        margin:auto;
         width: 40%;
-        border-radius: 28px;
-        border-top-left-radius: 28px;
-        border-top-right-radius: 28px;
-        border-bottom-right-radius: 28px;
-        border-bottom-left-radius: 28px;
+        margin: auto;
     }
     .search-btn-input {
         display: flex;
@@ -189,7 +184,7 @@
                 </div>
                 <input type="search" id="search-input" onkeypress="CheckInfo()" autocomplete="off" autofocus="autofocus" placeholder="百度一下" class="search-input">
                 <div class="se-button" id="btn-search" onclick="searchClick()">
-                    
+
                 </div>
                 </div>
             </div>
@@ -200,7 +195,7 @@
             </div>
             <div class="popimg" id="xiaoxian" />
         </div>
-        <div class="">
+        <div class="popWindow">
         
         </div>
     </div>
@@ -244,12 +239,12 @@
            });
        }else{ 
            //如果是手机,跳转到
-            document.getElementById("search-out").style.width="75%";
-            document.getElementById("search-out").style.height="10%";
+            document.getElementById("search-out").style.width="80%";
+            document.getElementById("fugai").style.top="20%";
            Dot("dot", {
                cW:window.innerWidth*2,
                cH:window.innerHeight*2,
-               numDot:20,
+               numDot:50,
                dotColor:"#FFFFFF",
                lineColor:"#FFFFFF",
                lineDist:45,
