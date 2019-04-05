@@ -196,9 +196,12 @@
         </div>
         <div id="popdiv" class="popdiv">
             <div class="popmsg">
-                <p style="color: white; opacity: 0.7; font-size: 38px;">大不6仙</p>
+                <p onclick="xiaoxianClick()" style="color: white; opacity: 0.7; font-size: 28px;">去关注小仙~</p>
             </div>
-            <div onclick="xiaoxianClick()" class="popimg" id="xiaoxian" />
+            <div class="popimg" id="xiaoxian" />
+        </div>
+        <div class="">
+        
         </div>
     </div>
 </body>
@@ -230,21 +233,31 @@
        if(system.win||system.mac||system.xll){
            //pc访问输入框为35
            document.getElementById("search-out").style.width="35%";
+           Dot("dot", {
+               cW:window.innerWidth*2,
+               cH:window.innerHeight*2,
+               numDot:80,
+               dotColor:"#FFFFFF",
+               lineColor:"#FFFFFF",
+               lineDist:200,
+               opacity:1
+           });
        }else{ 
            //如果是手机,跳转到
             document.getElementById("search-out").style.width="75%";
             document.getElementById("search-out").style.height="10%";
+           Dot("dot", {
+               cW:window.innerWidth*2,
+               cH:window.innerHeight*2,
+               numDot:20,
+               dotColor:"#FFFFFF",
+               lineColor:"#FFFFFF",
+               lineDist:45,
+               opacity:1
+           });
        }
     
-    Dot("dot", {
-        cW:window.innerWidth*2,
-        cH:window.innerHeight*2,
-        numDot:80,
-        dotColor:"#FFFFFF",
-        lineColor:"#FFFFFF",
-        lineDist:200,
-        opacity:1
-    });
+    
 </script> 
 </html>
 
