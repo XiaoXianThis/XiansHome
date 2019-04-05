@@ -174,8 +174,7 @@
     <div class="mainDiv">
         <div class="blurbg">
         </div>
-        <canvas id="dot">
-        </canvas>
+        <canvas id="dot"></canvas>
         <div id="fugai" class="fugai">
             <div class="search-input-out" id="search-out">
                 <div class="search-btn-input se-btn-show-true se-btn-show-true">
@@ -195,6 +194,7 @@
             </div>
             <div class="popimg" id="xiaoxian" />
         </div>
+        
         <div class="popWindow">
         
         </div>
@@ -240,10 +240,10 @@
        }else{ 
            //如果是手机,跳转到
             document.getElementById("search-out").style.width="85%";
-            document.getElementById("fugai").style.top="20%";
+            document.getElementById("fugai").style.top="30%";
            Dot("dot", {
-               cW:window.innerWidth,
-               cH:window.innerHeight,
+               cW:window.innerWidth*2,
+               cH:window.innerHeight*2,
                numDot:40,
                dotColor:"#FFFFFF",
                lineColor:"#FFFFFF",
@@ -251,6 +251,17 @@
                opacity:0.5
            });
        }
+    window.onresize = function(){
+        Dot("dot", {
+               cW:window.innerWidth,
+               cH:window.innerHeight,
+               numDot:60,
+               dotColor:"#FFFFFF",
+               lineColor:"#FFFFFF",
+               lineDist:150,
+               opacity:0.5
+           });
+    }
     
     
 </script> 
