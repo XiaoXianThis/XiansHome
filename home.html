@@ -229,26 +229,26 @@
            //pc访问输入框为35
            document.getElementById("search-out").style.width="35%";
            Dot("dot", {
-               cW:window.innerWidth*2,
-               cH:window.innerHeight*2,
-               numDot:80,
+               cW:window.innerWidth,
+               cH:window.innerHeight,
+               numDot:60,
                dotColor:"#FFFFFF",
                lineColor:"#FFFFFF",
-               lineDist:200,
-               opacity:1
+               lineDist:150,
+               opacity:0.5
            });
        }else{ 
            //如果是手机,跳转到
-            document.getElementById("search-out").style.width="80%";
-            document.getElementById("fugai").style.top="20%";
+            document.getElementById("search-out").style.width="85%";
+            document.getElementById("fugai").style.top="15%";
            Dot("dot", {
-               cW:window.innerWidth*2,
-               cH:window.innerHeight*2,
-               numDot:50,
+               cW:window.innerWidth,
+               cH:window.innerHeight,
+               numDot:40,
                dotColor:"#FFFFFF",
                lineColor:"#FFFFFF",
-               lineDist:45,
-               opacity:1
+               lineDist:100,
+               opacity:0.5
            });
        }
     
