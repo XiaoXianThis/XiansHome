@@ -187,7 +187,7 @@
         position: absolute;
         bottom: 5%;
         opacity: 0.8;
-        border-radius: 40px;
+        border-radius: 20px;
         background: #000000;
         box-shadow: #5555 0px 0px 30px 0px;
     }
@@ -204,6 +204,8 @@
         <div class="blurbg">
         </div>
         <canvas id="dot"></canvas>
+        
+        <!--搜索框层-->
         <div id="fugai" class="fugai">
             <div class="search-input-out" id="search-out">
                 <div class="search-btn-input se-btn-show-true se-btn-show-true">
@@ -217,12 +219,13 @@
                 </div>
             </div>
         </div>
+        
+        <!--弹出选项层-->
         <div id="popwindow" class="popwin">
-            <div class="popwinbg">
-                
-                
-            </div>
+            <div class="popwinbg"></div>
         </div>
+        
+        <!--左下角色层-->
         <div id="popdiv" class="popdiv">
             <div class="popmsg">
                 <p onclick="xiaoxianClick()" style="color: white; opacity: 0.7; font-size: 28px;">大不6仙</p>
@@ -292,7 +295,7 @@
                     scrollUp();
                     console.log("滑轮向上滚动");  
                  }  
-                if (e.wheelDelta < 0) { //当滑轮向下滚动时  
+                if (e.wheelDelta < 50) { //当滑轮向下滚动时  
                       console.log("滑轮向下滚动");  
                     scrollDown();
                 }  
@@ -303,11 +306,13 @@
     
     
     function scrollUp(){
-        document.getElementById("popwindow").style.transform = "translateY(-90%)";
+        document.getElementById("popwindow").style.transform = "translateY(0%)";
+        document.getElementById("fugai").style.transform = "translateY(0%)";
     }
     
     function scrollDown(){
-        document.getElementById("popwindow").style.transform = "translateY(0%)";
+        document.getElementById("popwindow").style.transform = "translateY(-90%)";
+        document.getElementById("fugai").style.transform = "translateY(-90%)";
     }
     
 </script> 
