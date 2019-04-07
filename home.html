@@ -191,6 +191,9 @@
         background: #000000;
         box-shadow: #5555 0px 0px 30px 0px;
     }
+    /*body::-webkit-scrollbar {
+        width: 0px;
+    }*/
     
     
 </style>
@@ -214,7 +217,7 @@
                 </div>
             </div>
         </div>
-        <div class="popwin">
+        <div id="popwindow" class="popwin">
             <div class="popwinbg">
                 
                 
@@ -222,7 +225,7 @@
         </div>
         <div id="popdiv" class="popdiv">
             <div class="popmsg">
-                <p onclick="xiaoxianClick()" style="color: white; opacity: 0.7; font-size: 28px;">去关注小仙~</p>
+                <p onclick="xiaoxianClick()" style="color: white; opacity: 0.7; font-size: 28px;">大不6仙</p>
             </div>
             <div class="popimg" id="xiaoxian" />
         </div>
@@ -281,10 +284,31 @@
                opacity:0.5
            });
        }
-    window.onresize = function(){
+    
+        var scrollFunc = function (e) {  
+             e = e || window.event;  
+            if (e.wheelDelta) {  //第一步：先判断浏览器IE，谷歌滑轮事件               
+                  if (e.wheelDelta > 0) { //当滑轮向上滚动时  
+                    scrollUp();
+                    console.log("滑轮向上滚动");  
+                 }  
+                if (e.wheelDelta < 0) { //当滑轮向下滚动时  
+                      console.log("滑轮向下滚动");  
+                    scrollDown();
+                }  
+            }
+        }
         
+        window.onmousewheel = document.onmousewheel = scrollFunc;
+    
+    
+    function scrollUp(){
+        document.getElementById("popwindow").style.transform = "translateY(-90%)";
     }
     
+    function scrollDown(){
+        document.getElementById("popwindow").style.transform = "translateY(0%)";
+    }
     
 </script> 
 </html>
